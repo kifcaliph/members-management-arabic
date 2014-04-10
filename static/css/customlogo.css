@@ -1,0 +1,10 @@
+.customlogo {
+      margin: 0px 0px 0px 0px;
+      border: 5px solid grey;
+      border-radius: 90px;
+    }
+.customparagraph{
+	writing-mode:rl-tb;
+	text-align:right;
+	direction:rtl;
+}

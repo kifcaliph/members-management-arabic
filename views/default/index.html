@@ -1,0 +1,31 @@
+{{extend 'layout.html'}}
+
+
+<script type="text/javascript" src="{{=URL(r=request,c='static',f='jquery.js')}}"></script>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+		hide();
+});
+
+function getData(value){
+	if(value != ""){
+		$("#ajaxresults").show();
+		$.post("{{=URL(r=request,f='search_membername')}}",{partialstr:value},function(result){
+			$("#ajaxresults").html(result);});
+        }else{
+			hide();
+        }
+    }
+
+function hide(){
+	$("#ajaxresults").hide();
+}
+
+function copyToBox(value){
+	$("#membername").val(value);
+	hide();
+}   
+</script>
+<label for="membername">اسم العضو</label><br />
+<input type="text" id="membername" name="membername" autocomplete="off" onkeyup="getData(this.value);" /><br />
+<div id="ajaxresults" ></div>

@@ -1,0 +1,28 @@
+{{extend 'layout.html'}}
+<p style="text-align:center;">إذن إستلام</p>
+<table style="float:right;width:100%">
+{{=form.custom.begin}}
+<tr>
+<td><p class="customparagraph">{{=form.custom.widget.Code_id}}</p></td>    
+<td><p class="customparagraph">رقم الإذن</p></td>
+</tr>
+<tr>
+<td><p class="customparagraph">{{=form.custom.widget.Payment_Date}}</p></td>    
+<td><p class="customparagraph">تاريخ الإيصال</p></td>
+</tr>
+<tr>
+<td><p class="customparagraph">{{=form.custom.widget.member_name}}</p></td>    
+<td><p class="customparagraph">اسم العضو</p></td>
+</tr>
+<tr>
+<td><p class="customparagraph">{{=form.custom.widget.Payment_type}}</p></td>    
+<td><p class="customparagraph">إشتراك سنوي</p></td>
+</tr>
+{{=form.custom.end}}
+</table>
+<h2>Submitted variables</h2>
+{{=BEAUTIFY(request.vars)}}
+<h2>Accepted variables</h2>
+{{=BEAUTIFY(form.vars)}}
+<h2>Errors in form</h2>
+{{=BEAUTIFY(form.errors)}}
