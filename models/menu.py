@@ -20,11 +20,13 @@ response.google_analytics_id = None
 
 response.menu = [
     (T('الرئيسية'), False, URL('default', 'index'), []),
-    (T('عضو جديد'), False, URL('default', 'new_user'), []),
-    (T('اشتراكات'), False, URL('default', 'new_payment'), []),
-    (T('قسيمة إشتراك جديدة'), False, URL('default', 'new_event'), []),
+    (T('عضو جديد'), False, URL('default', 'new_member'), []),
+    (T('تسجيل إشتراك'), False, URL('default', 'new_payment'), []),
+    (T('نوع إشتراك'), False, URL('default', 'new_event'), []),
+    (T('بحث'), False, URL('default', 'search_member'), []),
+    (T('أعضاء بلا إشتراك'), False, URL('default', 'mem_nopay'), []),
     (T('تقارير'), False, URL('default', 'reporting'), []),
-    (T('المشرف العام'), False, URL('default', 'new_user'), [])
+    (T('المشرف العام'), False, URL('default', 'AdminPanel'), [])
     ]
 
 DEVELOPMENT_MENU = True

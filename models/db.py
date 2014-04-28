@@ -112,7 +112,7 @@ db.define_table('travels',
 
 db.define_table('payments',
                 Field('Code_id', 'string', label='رقم الاذن'),
-                Field('Payment_Date', 'date', default = request.now, requires=[IS_NOT_EMPTY(),IS_DATE(format=('%Y-%m-%d'))], label='تارخ الاذن'),
+                Field('Payment_Date', 'date', default = request.now, requires=[IS_NOT_EMPTY(),IS_DATE(format=('%Y-%m-%d'))], label='تاريخ الاذن'),
                 Field('member_name', db.members, label='اسم العضو'),
                 Field('Payment_category', db.travels, label='الإشتراك'),
                 Field('ammout', 'decimal(10,2)', label='المبلغ'),

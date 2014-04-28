@@ -1,0 +1,47 @@
+{{extend 'layout.html'}}
+<style>
+td{text-align:center;vertical-align:middle;}
+#members tr:nth-child(even)
+{background:#F8F8FF;}
+#members tr:nth-child(odd)
+{background:#F5FFFA;}
+#members a:link {color:#000000;}      /* unvisited link */
+#members a:visited {color:#000000;}
+</style>
+<p style="text-align:center;">أعضاء بلا إشتراك</p>
+<table style="float:right;width:100%">
+<form action="#" enctype="multipart/form-data" method="post">
+<tbody>
+<tr><td><p class="customparagraph">
+<select class="generic-widget" name="Payment_category">
+<option value="">اختر الإشتراك</option>
+{{for key, value in oplist.iteritems():}}
+<option value="{{=key}}">{{=value}}</option>
+{{pass}}
+</select></p></td>
+<td>
+<p class="customparagraph">نوع الإشتراك</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align:center"><input type="submit" value="بحث"></p>
+</form>
+<br />
+<br/>
+<h2>النتيجة</h2>
+<table style="float:right;width:100%;" id="members">
+<tbody>
+<tr>
+<td>الهاتف</td>
+<td>تاريخ الميلاد</td>
+<td>الاسم</td>
+</tr>
+{{for row in results:}}<tr>
+<td><a href="update/db/members/{{=row.id}}">{{=row.Cell_Phone}}</a></td>
+<td><a href="update/db/members/{{=row.id}}">{{=row.Date_of_birth}}</a></td>
+<td><a href="update/db/members/{{=row.id}}">{{=row.Name}}</a></td>
+</tr>{{pass}}
+</tbody>
+</table>
+<br />

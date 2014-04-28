@@ -1,4 +1,18 @@
 {{extend 'layout.html'}}
+
+{{if memID:}}
+<script>
+    function popOption(){ 
+        for (i = 0; i < document.getElementById('payments_member_name').options.length; ++i) {
+            if (document.getElementById('payments_member_name').options[i].value == "{{=memID}}"){
+                document.getElementById('payments_member_name').selectedIndex = i;
+            }
+        }
+    }
+    window.onload=popOption;
+</script>
+{{else:}}
+{{pass}}
 <p style="text-align:center;">إذن إستلام</p>
 <table style="float:right;width:100%">
 {{=form.custom.begin}}
@@ -15,14 +29,17 @@
 <td><p class="customparagraph">اسم العضو</p></td>
 </tr>
 <tr>
-<td><p class="customparagraph">{{=form.custom.widget.Payment_type}}</p></td>    
+<td><p class="customparagraph">{{=form.custom.widget.Payment_category}}</p></td>    
 <td><p class="customparagraph">إشتراك سنوي</p></td>
 </tr>
-{{=form.custom.end}}
+<tr>
+<td><p class="customparagraph">{{=form.custom.widget.ammout}}</p></td>    
+<td><p class="customparagraph">المبلغ</p></td>
+</tr>
+<tr>
+<td><p class="customparagraph">{{=form.custom.widget.Notes}}</p></td>    
+<td><p class="customparagraph">ملاحظات</p></td>
+</tr>
 </table>
-<h2>Submitted variables</h2>
-{{=BEAUTIFY(request.vars)}}
-<h2>Accepted variables</h2>
-{{=BEAUTIFY(form.vars)}}
-<h2>Errors in form</h2>
-{{=BEAUTIFY(form.errors)}}
+<p style="text-align:center">{{=form.custom.submit}}</p>
+{{=form.custom.end}}

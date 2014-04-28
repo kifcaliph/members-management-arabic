@@ -10,11 +10,6 @@
 <td><p class="customparagraph">{{=form.custom.widget.event_date}}</p></td>    
 <td><p class="customparagraph">تاريخ الرحلة</p></td>
 </tr>
-{{=form.custom.end}}
 </table>
-<h2>Submitted variables</h2>
-{{=BEAUTIFY(request.vars)}}
-<h2>Accepted variables</h2>
-{{=BEAUTIFY(form.vars)}}
-<h2>Errors in form</h2>
-{{=BEAUTIFY(form.errors)}}
+<p style="text-align:center">{{=form.custom.submit}}</p>
+{{=form.custom.end}}

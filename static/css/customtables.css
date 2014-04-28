@@ -1,0 +1,8 @@
+#members tr:nth-child(even)
+{
+background:#CCCCCC;
+}
+#members tr:nth-child(odd)
+{
+background:#CCCCCC;
+}

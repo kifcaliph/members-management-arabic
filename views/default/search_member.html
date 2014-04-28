@@ -1,0 +1,54 @@
+{{extend 'layout.html'}}
+<style>
+td{text-align:center;vertical-align:middle;}
+#members tr:nth-child(even)
+{background:#F8F8FF;}
+#members tr:nth-child(odd)
+{background:#F5FFFA;}
+#members a:link {color:#000000;}      /* unvisited link */
+#members a:visited {color:#000000;}
+</style>
+<p style="text-align:center;">بحث عضو</p>
+<table style="float:right;width:100%">
+<form action="#" enctype="multipart/form-data" method="post">
+<tr>
+<td><p class="customparagraph"><input class="string" id="members_Name" name="Name" type="text" value="" autocomplete='off' /></p></td>    
+<td><p class="customparagraph">اسم العضو</p></td>
+</tr>
+<tr>
+<td><p class="customparagraph"><input class="date" id="members_Date_of_birth" name="Date_of_birth" type="text" value="" autocomplete='off'/></p></td>    
+<td><p class="customparagraph">تاريخ الميلاد</p></td>
+</tr>
+<tr>
+<td><p class="customparagraph"><input class="string" id="members_Membership_ID" name="Membership_ID" type="text" value="" autocomplete='off'/></p></td>    
+<td><p class="customparagraph">رقم العضوية</p></td>
+</tr>
+<tr>
+<td><p class="customparagraph"><input class="integer" id="members_Home_Phone" name="Home_Phone" type="text" value="" autocomplete='off'/></p></td>    
+<td><p class="customparagraph">رقم هاتف</p></td>
+</tr>
+<tr>
+<td><p class="customparagraph"><input class="double" id="members_National_Id_or_passport" name="National_Id_or_passport" type="text" value="" autocomplete='off'/></p></td>    
+<td><p class="customparagraph">رقم المعرف</p></td>
+</tr>
+</table>
+<input calss="btn" type="submit" value="بحث" />
+</form>
+
+<br/>
+<h2>النتيجة</h2>
+<table style="float:right;width:100%;" id="members">
+<tbody>
+<tr>
+<td>الهاتف</td>
+<td>تاريخ الميلاد</td>
+<td>الاسم</td>
+</tr>
+{{for row in results:}}<tr>
+<td><a href="update/db/members/{{=row.id}}">{{=row.Cell_Phone}}</a></td>
+<td><a href="update/db/members/{{=row.id}}">{{=row.Date_of_birth}}</a></td>
+<td><a href="update/db/members/{{=row.id}}">{{=row.Name}}</a></td>
+</tr>{{pass}}
+</tbody>
+</table>
+<br />
